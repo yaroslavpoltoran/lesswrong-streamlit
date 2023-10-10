@@ -38,6 +38,7 @@ def get_response_from_query(db, query, model=cfg.MODEL, n_dosc=cfg.N_DOSC, n_url
     chain = LLMChain(llm=llm, prompt=prompt)
     response = chain.run(question=query, docs=docs_page_content)
 
-    urls = get_publications_urls(docs, n_urls=n_urls)
-    response = response + "\n\n" + urls
+    if n_urls > 0:
+        urls = get_publications_urls(docs, n_urls=n_urls)
+        response = response + "\n\n" + urls
     return response
