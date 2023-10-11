@@ -32,7 +32,7 @@ def get_response_from_query(db, query, model=cfg.MODEL, n_dosc=cfg.N_DOSC, n_url
         
         If you feel like you don't have enough information to answer the question, say "I don't know".
         
-        Your answers should be brief, but meaningful.
+        Your answers should be of medium or short length, but meaningful.
         """,
     )
 
