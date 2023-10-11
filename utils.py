@@ -28,10 +28,11 @@ def get_response_from_query(db, query, model=cfg.MODEL, n_dosc=cfg.N_DOSC, n_url
         By searching the following Eliezer Yudkowsky publications: {docs}
         
         Only use the factual information from the transcript to answer the question.
+        You can use your own information about Eliezer Yudkowsky and the topic, but don't make up any new information.
         
         If you feel like you don't have enough information to answer the question, say "I don't know".
         
-        Your answers should be verbose and detailed.
+        Your answers should be brief, but meaningful.
         """,
     )
 
