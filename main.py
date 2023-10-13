@@ -37,14 +37,14 @@ if prompt := st.chat_input("What is up?"):
     # Add user message to chat history
     st.session_state.messages.append({"role": "user", "content": prompt})
     logging.info(f"User input: {prompt}")
-
+    # Get response from model
     response = get_response_from_query(
         db=db, query=prompt, model=cfg.MODEL, n_dosc=cfg.N_DOSC, n_urls=cfg.N_URLS
     )
 
-    # Display assistant response in chat message container
+    # Display response in chat message container
     with st.chat_message("assistant"):
         st.markdown(response)
-    # Add assistant response to chat history
+    # Add response to chat history
     st.session_state.messages.append({"role": "assistant", "content": response})
     logging.info(f"Assistant response: \n{response[:200]}")

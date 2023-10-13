@@ -6,10 +6,10 @@ import config as cfg
 
 
 def get_publications_urls(docs, n_urls) -> str:
-    title_urls = {docs.metadata['title']: docs.metadata['url'] for docs in docs}
-    title_urls = dict(list(title_urls.items())[0: n_urls])
+    title_urls = {docs.metadata["title"]: docs.metadata["url"] for docs in docs}
+    title_urls = dict(list(title_urls.items())[0:n_urls])
     urls = "\n".join([f"- [{title}]({url})" for title, url in title_urls.items()])
-    urls = f"Here are the publications I used to answer your question:\n {urls}"
+    urls = f"Here are some of the publications I used to answer your question:\n {urls}"
     return urls
 
 
